@@ -1,16 +1,16 @@
 <nav class="navbar navbar-custom navbar-static-top" ng-controller="NavbarCtrl">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" style="margin-left:0px" ui-sref="{{loggedIn ? 'account' : 'home'}}">
-        NAME
-      </a>
+            <a class="navbar-brand" style="margin-left:0px" ui-sref="{{loggedIn ? 'account' : 'home'}}">ATOM</a>
         </div>
 
-        <div class="" id="bs-example-navbar-collapse-1">
-
+        <div>
             <ul class="nav navbar-nav">
-                <li ng-class="{ active: isActive('/account')}" ng-show="hasRole('hacker')">
+                <li ng-class="{ active: isActive('/account')}" ng-show="hasRole('user')">
                     <a ui-sref="account">Account</a>
+                </li>
+                <li>
+                    <a>test</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
