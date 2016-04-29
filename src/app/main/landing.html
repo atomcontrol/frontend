@@ -1,4 +1,14 @@
 <div ng-include="'app/components/navbar/navbar.html'"></div>
-<div class="container">
-	hi
+<div class="container-fluid">
+	<div class="card-grid">
+	<div ng-repeat="a in range(8) track by $index" class="card">
+		<div class="card-header">
+			HEADER
+		</div>
+		<hr class="card-divider">
+		<div class="card-body">
+			body
+		</div>
+	</div>
+</div>
 </div>
