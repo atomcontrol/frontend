@@ -1,7 +1,7 @@
+.DS_Store
+.idea
+*.iml
 node_modules/
-bower_components/
-.sass-cache/
-.tmp/
-dist/
-config.js
-.DS_Store/
+build/
+*.log*
+npm-debug.log
