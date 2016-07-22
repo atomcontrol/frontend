@@ -1,4 +1,5 @@
 import SignInForm from '../components/SignInForm.js';
+import {API_BASE_URL} from '.././config';
 import {signInUser, signInUserSuccess, signInUserFailure, resetUserFields } from '../actions/users';
 import { reduxForm } from 'redux-form';
 
@@ -23,7 +24,7 @@ const validateAndSignInUser = (values, dispatch) => {
 
   console.log("hey");
 
-  let formValues={email:'nicky@purdue.edu',password:'nicky'};
+  let formValues={email:'hi@hi.com',password:'hi'};
 
   var data = new FormData(formValues);
   data.append("email", formValues.email);//todo: why doesn't this work!!
@@ -37,7 +38,7 @@ const validateAndSignInUser = (values, dispatch) => {
   }
 
 
-  fetch('http://bm/v1/auth', config)
+  fetch(API_BASE_URL+'auth', config)
     .then(response =>
       response.json().then(user => ({ user, response }))
     ).then(({ user, response }) =>  {

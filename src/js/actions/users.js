@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import {API_BASE_URL} from '.././config';
 //Get current user(me) from token in localStorage
 export const ME_FROM_TOKEN = 'ME_FROM_TOKEN';
 export const ME_FROM_TOKEN_SUCCESS = 'ME_FROM_TOKEN_SUCCESS';
@@ -31,11 +31,10 @@ export const UPDATE_USER_EMAIL = 'UPDATE_USER_EMAIL';
 export const LOGOUT_USER = 'LOGOUT_USER';
 
 
-const ROOT_URL = 'http://bm/v1'; //location.href.indexOf('localhost') > 0 ? 'http://localhost:3000/api' : '/api';
 
 export function validateEmail(validateEmailToken) {
   //check if token from welcome email is valid, if so, update email as verified and login the user from response
-  const request = axios.get(`${ROOT_URL}/validateEmail/${validateEmailToken}`);
+  const request = axios.get(`${API_BASE_URL}/validateEmail/${validateEmailToken}`);
 
   return {
     type: VALIDATE_EMAIL,
@@ -59,7 +58,7 @@ export function validateEmailFailure(error) {
 
 export function meFromToken(tokenFromStorage) {
   //check if the token is still valid, if so, get me from the server
-  const request = axios.get(`${ROOT_URL}/users/me?token=${tokenFromStorage}`);
+  const request = axios.get(`${API_BASE_URL}/users/me?token=${tokenFromStorage}`);
 
   return {
     type: ME_FROM_TOKEN,
@@ -90,7 +89,7 @@ export function resetToken() {//used for logout
 
 
 export function signUpUser(formValues) {
-  const request = axios.post(`${ROOT_URL}/users/signup`, formValues);
+  const request = axios.post(`${API_BASE_URL}/users/signup`, formValues);
 
   return {
     type: SIGNUP_USER,
@@ -120,7 +119,7 @@ export function resetUser() {
 }
 
 export function signInUser(formValues) {
-  const request = axios.post(`${ROOT_URL}/auth`, formValues);
+  const request = axios.post(`${API_BASE_URL}/auth`, formValues);
 
   return {
     type: SIGNIN_USER,

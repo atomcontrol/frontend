@@ -2,7 +2,7 @@ export function test1(inp)
 {
   console.log('test1 receieved',inp);
 }
-
+import { API_BASE_URL} from '.././config';
 
 
 function urlBase64Decode(str) {
@@ -37,7 +37,7 @@ export function decodeJWT(token) {
 
 
 function completeRequest(route,config,verbose) {
-  return fetch('http://bm/v1/'+route, config)
+  return fetch(API_BASE_URL+route, config)
     .then(response =>
       response
         .json()
