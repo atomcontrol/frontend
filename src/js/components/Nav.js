@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import {test1, APIget} from './Test';
+import {test1, APIget} from '../Utils';
 import { Link } from 'react-router';
 import { Navbar, NavItem, NavDropdown, Nav, MenuItem} from 'react-bootstrap';
 import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
@@ -28,6 +28,7 @@ export default class MainNavBar extends Component {
               <MenuItem divider />
               <MenuItem eventKey={3.3}>Separated link</MenuItem>
             </NavDropdown>
+            <LinkContainer to="/recipes"><NavItem eventKey={2}>Recipes</NavItem></LinkContainer>
           </Nav>
           <Nav pullRight>
             {
@@ -41,7 +42,7 @@ export default class MainNavBar extends Component {
               <MenuItem eventKey={3.3} onClick={() => { this.props.logout(); }}>Log out</MenuItem>
             </NavDropdown>
               :
-            <LinkContainer to="/signin"><NavItem eventKey={2}>Sign In</NavItem></LinkContainer>
+            <LinkContainer to="/signin"><NavItem eventKey={4}>Sign In</NavItem></LinkContainer>
             }
 
 

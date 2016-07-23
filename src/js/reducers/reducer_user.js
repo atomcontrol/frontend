@@ -7,7 +7,7 @@ import {
 	LOGOUT_USER, UPDATE_USER_EMAIL
 } from '../actions/users';
 
-import { decodeJWT } from '../components/Test'
+import { decodeJWT } from '../Utils'
 //user = userobj,
 // status can be:
 // 1. 'storage' ie. localstorage / sessionstorage)

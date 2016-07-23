@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logoutUser } from '../actions/users';
 import MainNavBar from '../components/Nav.js';
-import {decodeJWT} from '../components/Test';
+import {decodeJWT} from '../Utils';
 
 
 function mapStateToProps(state) {

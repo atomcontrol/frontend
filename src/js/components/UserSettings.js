@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import {test1, APIget} from './Test';
+import {test1, APIget} from '../Utils';
 export default class UserSettings extends Component {
 
   // constructor(props) {
@@ -20,6 +20,7 @@ export default class UserSettings extends Component {
 
     return (
       <div className="container">
+        <div className="card"></div>
         {userproperties}
         <hr/>
         <button className="button-primary-wide" onClick={this.props.reload}>Reload Data</button>
