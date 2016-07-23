@@ -18,7 +18,7 @@ export default class RecipeDetail extends Component {
       for (let key in p) {
         if (p.hasOwnProperty(key)) {
           instructionSections.push(
-            <div  key={p[key].id}>
+            <div key={p[key].id}>
               <div className='recipe-detail_section-header'>{p[key].title}</div>
               <p>{p[key].body}</p>
             </div>);
@@ -28,7 +28,7 @@ export default class RecipeDetail extends Component {
       let ingredientSections = [];
       let q = r.ingredient_sections;
       for (let key in q) {
-        if (p.hasOwnProperty(key)) {
+        if (q.hasOwnProperty(key)) {
 
           let ingList = [];
           for(var ingr in q[key].ingredients) {
@@ -44,7 +44,7 @@ export default class RecipeDetail extends Component {
             </div>);
           }
           ingredientSections.push(
-            <div>
+            <div key={q[key].id}>
               <div className='recipe-detail_section-header'>{q[key].title}</div>
               <div className='recipe-detail_ingredient-section-body' ><div>{ingList}</div></div>
               <br/>

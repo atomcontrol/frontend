@@ -3,11 +3,11 @@ import RecipeContainer from '../containers/RecipeContainer.js';
 import HeaderContainer from '../containers/HeaderContainer';
 class RecipePage extends Component {
   render() {
-    let slug = this.props.params.slug;
+    let {slug, mode} = this.props.params;
     return (
       <div>
         <HeaderContainer/>
-          <RecipeContainer slug={this.props.params.slug} />
+          <RecipeContainer slug={slug} mode={mode} />
       </div>
     );
   }
