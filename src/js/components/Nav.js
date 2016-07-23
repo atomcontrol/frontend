@@ -1,13 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import {test1, APIget} from '../Utils';
+import { APIget} from '../Utils';
 import { Link } from 'react-router';
 import { Navbar, NavItem, NavDropdown, Nav, MenuItem} from 'react-bootstrap';
 import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
 import './navbar.scss';
 export default class MainNavBar extends Component {
   render() {
-    test1("aay");
-    APIget("users/me").then(a => console.log("BODY:",a));
+    //APIget("users/me").then(a => console.log("BODY:",a));
     return (
       <Navbar className="navbar-custom">
         <Navbar.Header>

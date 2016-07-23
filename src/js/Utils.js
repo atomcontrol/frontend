@@ -1,7 +1,3 @@
-export function test1(inp)
-{
-  console.log('test1 receieved',inp);
-}
 import { API_BASE_URL} from './config';
 
 

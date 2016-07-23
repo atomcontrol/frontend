@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import {test1, APIget} from '../Utils';
+import {APIget} from '../Utils';
 export default class UserSettings extends Component {
 
   // constructor(props) {

@@ -4,26 +4,42 @@ import { logoutUser } from '../actions/users';
 import {APIget} from '../Utils';
 
 import RecipeList from '../components/RecipeList.js';
+import RecipeDetail from '../components/RecipeDetail.js';
 
 var RecipeContainer = React.createClass({
+
   getInitialState: function() {
     return {
-      me: []
+      recipeList: null,
+      recipeDetail: null
+    }
+  },
+  loadData: function (slug) {
+    var _this = this;
+    if(slug===undefined) {
+      APIget("recipes").then(function(response) {
+        _this.setState({recipeList: response})
+      });
+    }
+    else {
+      APIget("recipes/"+slug).then(function(response) {
+        _this.setState({recipeDetail: response});
+      });
+    }
+  },
+  componentDidMount: function() {
+    this.loadData(this.props.slug);
+  },
+  componentWillReceiveProps: function(nextProps) {
+    if(nextProps.slug != this.props.slug) {
+      this.setState({recipeDetail: null})
+      this.loadData(nextProps.slug);
     }
   },
 
-  loadData: function () {
-    var _this = this;
-    APIget("recipes").then(function(response) {
-      _this.setState({recipeList: response})
-    });
-  },
-  componentDidMount: function() {
-    this.loadData();
-  },
-
   render: function() {
-    return (<RecipeList list={this.state.recipeList}/>);
+    let view = (this.props.slug===undefined) ? <div className="container-fluid"><RecipeList list={this.state.recipeList}/></div> : <RecipeDetail recipe={this.state.recipeDetail}/>;
+    return (view);
   }
 });
 

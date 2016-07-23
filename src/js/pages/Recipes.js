@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import RecipeContainer from '../containers/RecipeContainer.js';
 import HeaderContainer from '../containers/HeaderContainer';
-class UserSettingsPage extends Component {
+class RecipePage extends Component {
   render() {
+    let slug = this.props.params.slug;
     return (
       <div>
         <HeaderContainer/>
-        <div className="container-fluid">
-          <RecipeContainer/>
-        </div>
+          <RecipeContainer slug={this.props.params.slug} />
       </div>
     );
   }
 }
 
 
-export default UserSettingsPage;
+export default RecipePage;
