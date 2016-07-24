@@ -1,4 +1,4 @@
-import { API_BASE_URL} from './config';
+import { API_BASE_URL, API_VERBOSE} from './config';
 
 
 function urlBase64Decode(str) {
@@ -32,7 +32,7 @@ export function decodeJWT(token) {
 }
 
 
-function completeRequest(route,config,verbose) {
+function completeRequest(route,config) {
   return fetch(API_BASE_URL+route, config)
     .then(response =>
       response
@@ -40,9 +40,9 @@ function completeRequest(route,config,verbose) {
         .then(body => ({ body, response }))
     )
     .then(({ body, response }) =>  {
-      if(verbose) {
-        console.log(body);
-        console.log(response);
+      if(API_VERBOSE) {
+        console.log("body", body);
+        console.log("response", response);
         console.groupEnd('APIRequest:' + route);
       }
       return body;
@@ -50,9 +50,8 @@ function completeRequest(route,config,verbose) {
 }
 export function APIget(route)
 {
-  let verbose = false;
   let token = localStorage.getItem('id_token') || null;
-  if(verbose)
+  if(API_VERBOSE)
   {
     console.group('APIRequest: GET '+route);
     console.log('auth\'d?',token!=null? 'yes':'no');
@@ -64,5 +63,28 @@ export function APIget(route)
     // headers: { 'Content-Type':'application/x-www-form-urlencoded' },
     // body: data
   };
-  return completeRequest(route,config,verbose);
+  return completeRequest(route,config);
+}
+export function APIput(route, data)
+{
+  let token = localStorage.getItem('id_token') || null;
+  if(API_VERBOSE)
+  {
+    console.group('APIRequest: PUT '+route);
+    console.log('data',data);
+    console.log('auth\'d?',token!=null? 'yes':'no');
+  }
+
+  var dataa = new FormData();
+  dataa.append("json",JSON.stringify(data));
+
+  var myHeaders = new Headers();
+  myHeaders.append('Authorization', `Bearer ${token}`);
+
+  let config = {
+    method: 'POST',
+    headers: myHeaders,
+     body: dataa
+  };
+  return completeRequest(route,config);
 }

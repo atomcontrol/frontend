@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import './RecipeCard.scss'
 import {Link} from 'react-router';
 export default class RecipeCard extends Component {
 
@@ -24,4 +23,3 @@ export default class RecipeCard extends Component {
     );
   }
 }
-8

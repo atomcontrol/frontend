@@ -20,7 +20,9 @@ export default class RecipeDetail extends Component {
           instructionSections.push(
             <div key={p[key].id}>
               <div className='recipe-detail_section-header'>{p[key].title}</div>
-              <p>{p[key].body}</p>
+              <p>{p[key].body.split("\n").map(i => {
+                return <p>{i}</p>;
+              })}</p>
             </div>);
         }
       }
@@ -35,7 +37,7 @@ export default class RecipeDetail extends Component {
             let ingredient = q[key].ingredients[ingr];
             ingList.push(
               <div key={ingredient.id}>
-                {ingredient.quantity} {ingredient.quantity_endrange ? "-"+ingredient.quantity_endrange : ''} {ingredient.quantity_unit} {ingredient.ingredient.name}
+                {ingredient.quantity} {(ingredient.quantity_endrange && ingredient.quantity_endrange!="0.00") ? "- "+ingredient.quantity_endrange : ''} {ingredient.quantity_unit} {ingredient.ingredient.name}
               ({ingredient.grams} grams)
               <div>
                 {ingredient.substitute ? <li>substitute: {ingredient.substitute.name}</li> : ''}
@@ -51,10 +53,6 @@ export default class RecipeDetail extends Component {
             </div>);
         }
       }
-
-
-
-
       return (
         <Grid>
           <Row className="show-grid">
@@ -73,11 +71,11 @@ export default class RecipeDetail extends Component {
               </Panel>*/}
             </Col>
             <Col xs={6} md={4}>
-              <Panel>
+              <Panel style={{background: "#88313B"}}>
                 <div className="recipe-detail_panel-header">ingredients</div>
                 {ingredientSections}
               </Panel>
-              <Panel>
+              <Panel style={{background: "#88313B"}}>
                 <div className="recipe-detail_panel-header">recipe details</div>
                 <ul className='recipe-detail_info-list'>
                   <li>makes: {r.makes_quantity} {r.makes_noun}</li>

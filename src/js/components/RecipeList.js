@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import RecipeCard from './RecipeCard';
+import './Recipe.scss'
+
 export default class RecipeList extends Component {
 
   render() {

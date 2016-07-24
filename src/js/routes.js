@@ -12,7 +12,7 @@ export default (
     <Route path="404" component={NotFoundView} />
     <Route path="signin" component={SignIn} />
     <Route path="settings" component={UserSettings} />
-    <Route path="recipes(/:slug)" component={RecipePage} />
+    <Route path="recipes(/:slug)(/:mode)" component={RecipePage} />
     <Redirect from="*" to="404" />
   </Route>
 );

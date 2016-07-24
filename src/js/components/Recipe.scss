@@ -90,41 +90,8 @@
 }
 
 
-//
-//
-//
-//
-//.recipe-detail_wrapper {
-//  display: flex;
-//  justify-content: center;
-//}
-//
-//.recipe-detail_nav {
-//  display: flex;
-//  height: 600px;
-//  min-height: 100%;
-//  flex-direction: column;
-//  position: fixed;
-//
-//}
-//.recipe-detail_nav-wrapper {
-//  height: 600px;
-//  width: 300px;
-//  background-color: #88313B;
-//  padding: 15px;
-//  //margin-top: 50px;
-//}
-//.recipe-detail_nav-wrapper-second {
-//  background-color: #32425C;
-//  //margin-top: -50px;
-//}
-//
-//.recipe-detail_content {
-//  width: 640px;
-//  background-color: #F2F2F2;
-//  min-height: 100vh;
-//  margin-left: -300px;
-//}
+
+
 .recipe-detail_hero-text {
   font-weight: 700;
   text-transform: uppercase;
@@ -154,40 +121,15 @@
   color: white;
   padding-bottom: 10px;
 }
-//.recipe-detail_instructions-header
-//{
-//  font-family: 'Montserrat', sans-serif;
-//  text-transform: uppercase;
-//  font-weight: 400;
-//  font-size: 23px;
-//  padding-bottom: 10px;
-//}
-//.recipe-detail_instructions-section
-//{
-//  padding-left: 20px;
-//}
-//.recipe-detail_instructions-section-header
-//{
-//  font-family: 'Montserrat', sans-serif;
-//  font-weight: 400;
-//  text-transform: uppercase;
-//  font-size: 14px;
-//}
-//.recipe-detail_instructions-section-body
-//{
-//  font-size: 13px;
-//  line-height: 21px;
-//}
-//.recipe-detail_info-section-header
-//{
-//  font-family: 'Montserrat', sans-serif;
-//  text-transform: uppercase;
-//  font-weight: 400;
-//  font-size: 23px;
-//  color: white;
-//  padding-bottom: 5px;
-//  padding-top: 10px;
-//}
+
+.recipe-editor-label {
+  display: inline-block;
+  width: 140px;
+  padding-right: 5px;
+  text-align: right; }
+.recipe-editor-input
+{
+  color: black; }
 .recipe-detail_info-list
 {
   list-style-type: none;
@@ -196,17 +138,3 @@
   padding:0;
   color:white;
 }
-//.recipe-detail_icon-list
-//{
-//  margin: 0 auto;
-//  margin-top: 20px;
-//  list-style-type: none;
-//  list-style-position:inside;
-//  margin:0;
-//  padding:0;
-//  color:white;
-//}
-//ul.recipe-detail_icon-list li {
-//  display:inline;
-//  padding: 2px;
-//}

@@ -26,7 +26,7 @@ const validateAndSignInUser = (values, dispatch) => {
 
   let formValues={email:'hi@hi.com',password:'hi'};
 
-  var data = new FormData(formValues);
+  var data = new FormData();
   data.append("email", formValues.email);//todo: why doesn't this work!!
   data.append("password", formValues.password);
 

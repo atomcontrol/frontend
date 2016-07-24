@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logoutUser } from '../actions/users';
-import {APIget} from '../Utils';
+import {APIget, APIput} from '../Utils';
 
 import RecipeList from '../components/RecipeList.js';
 import RecipeDetail from '../components/RecipeDetail.js';
+import RecipeEditor from '../components/RecipeEditor.js';
 
 var RecipeContainer = React.createClass({
 
@@ -29,6 +30,7 @@ var RecipeContainer = React.createClass({
   },
   componentDidMount: function() {
     this.loadData(this.props.slug);
+    console.log("mode is",this.props.mode);
   },
   componentWillReceiveProps: function(nextProps) {
     if(nextProps.slug != this.props.slug) {
@@ -36,9 +38,21 @@ var RecipeContainer = React.createClass({
       this.loadData(nextProps.slug);
     }
   },
+  updateRecipe: function(aa) {
+    console.log(aa);
+    APIput("recipes/"+aa.slug,aa);
+  },
 
   render: function() {
-    let view = (this.props.slug===undefined) ? <div className="container-fluid"><RecipeList list={this.state.recipeList}/></div> : <RecipeDetail recipe={this.state.recipeDetail}/>;
+    if(this.props.mode=="edit")
+      return(<RecipeEditor recipe={this.state.recipeDetail} updateRecipe={this.updateRecipe}/>);
+    let view =
+      (this.props.slug===undefined) ?
+      <div className="container-fluid">
+        <RecipeList list={this.state.recipeList}/>
+      </div>
+      :
+      <RecipeDetail recipe={this.state.recipeDetail}/>;
     return (view);
   }
 });
