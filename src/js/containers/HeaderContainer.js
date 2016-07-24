@@ -9,7 +9,7 @@ function mapStateToProps(state) {
   return {
     isAuthenticated: state.user.status=='authenticated',
     user: state.user,
-    name: state.user.data.slug
+    name: state.user.data ? state.user.data.slug : 'naa'
 
   };
 }
