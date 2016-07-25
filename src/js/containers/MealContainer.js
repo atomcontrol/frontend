@@ -25,7 +25,9 @@ var MealContainer = React.createClass({
   },
   render: function() {
     return(<div className="container">
+      <h1>Meals</h1>
       <MealList list={this.state.mealList}/>
+      <h1>Ingredients</h1>
       <ShoppingList list={this.state.shoppingList}/>
     </div>);
   }

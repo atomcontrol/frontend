@@ -24,7 +24,6 @@ export default class MealList extends Component {
 
     return (
       <div>
-
         <Table bordered condensed>
           <thead>
           <tr>

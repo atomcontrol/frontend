@@ -12,7 +12,7 @@ export default class MainNavBar extends Component {
         <Navbar.Header>
           <Navbar.Brand>
             <IndexLinkContainer to="/">
-              <a>ATOM</a>
+              <a>home</a>
             </IndexLinkContainer>
           </Navbar.Brand>
           <Navbar.Toggle />

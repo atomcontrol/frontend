@@ -15,7 +15,7 @@ export default class ShoppingList extends Component {
         if(list.hasOwnProperty(item)) {
 
           let dependencies = list[item].deps.map(function(item) {
-            return(<li>{item.recipe_name} - {item.quantity}  {item.quantity_unit}  {item.grams} grams (endrange: {item.quantity_endrange}) {/*(substitute: todo)*/} </li>)
+            return(<li>{item.recipe_name}: {item.quantity} {item.quantity_endrange != 0 ? "-"+item.quantity_endrange : ''} {item.quantity_unit}  {item.grams != 0 ? "("+item.grams + " grams)" : ''} {item.substitute ? "(substitute: " + item.substitute.name + ")": ''} </li>)
           });
           listItems.push(
            <tr key={item}>
@@ -32,9 +32,9 @@ export default class ShoppingList extends Component {
         <Table bordered condensed>
           <thead>
           <tr>
-            <th>name</th>
-            <th>when</th>
-            <th>recipes</th>
+            <th>ingredient</th>
+            <th>quantity</th>
+            <th>info</th>
           </tr>
           </thead>
           <tbody>

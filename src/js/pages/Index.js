@@ -7,7 +7,7 @@ class Index extends Component {
       <div>
         <HeaderContainer/>
         <div className="homepage">
-          <h1 style={{fontSize: '80px'}}>A.T.O.M.</h1>
+          <h1 style={{fontSize: '80px'}}>hi</h1>
           </div>
       </div>
     );
