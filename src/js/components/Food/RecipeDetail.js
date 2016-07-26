@@ -60,8 +60,8 @@ export default class RecipeDetail extends Component {
               <Panel>
                 <div className="recipe-detail_hero-text">{r.name}</div>
                 <img
-                  src={"http://res.cloudinary.com/nickysemenza/image/upload/c_fill,h_380,w_640/recipe-hub/"+r.slug}
-                  width="100%" style={{"zIndex": "-1", "marginTop": "0px"}}/>
+                  src={"http://res.cloudinary.com/nickysemenza/image/upload/c_scale,h_300/recipe-hub/"+r.slug}
+                   style={{"zIndex": "-1", "marginTop": "0px"}}/>
                 <br/>
                 <div className="recipe-detail_panel-header">instructions</div>
                 {instructionSections}
