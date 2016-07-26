@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../actions/users';
 import {APIget, APIput} from '../Utils';
 
-import RecipeList from '../components/RecipeList.js';
-import RecipeDetail from '../components/RecipeDetail.js';
-import RecipeEditor from '../components/RecipeEditor.js';
+import RecipeList from '../components/Food/RecipeList.js';
+import RecipeDetail from '../components/Food/RecipeDetail.js';
+import RecipeEditor from '../components/Food/RecipeEditor.js';
 
 var RecipeContainer = React.createClass({
 

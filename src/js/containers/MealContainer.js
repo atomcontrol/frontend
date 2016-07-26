@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {APIget, APIput} from '../Utils';
-import MealList from '../components/MealList';
-import ShoppingList from '../components/ShoppingList';
+import MealList from '../components/Food/MealList';
+import ShoppingList from '../components/Food/ShoppingList';
 var MealContainer = React.createClass({
 
   getInitialState: function() {
