@@ -100,7 +100,7 @@ export default class RecipeEditor extends Component {
         <td>
           <input className="recipe-editor-input" type="text" onChange={ (e) => this.handleChange(e,"instruction_sections", index)} name="title" value={item.title}/>
         </td>
-        <td><textarea className="recipe-editor-input" type="text" onChange={ (e) => this.handleChange(e,"instruction_sections", index)} name="body" value={item.body}/></td>
+        <td><textarea cols="80" rows="8" className="recipe-editor-input" type="text" onChange={ (e) => this.handleChange(e,"instruction_sections", index)} name="body" value={item.body}/></td>
         <td><button className="button-primary-wide" onClick={() => this.deleteInstructionSection(index)}>delete section</button></td>
       </tr>);
 

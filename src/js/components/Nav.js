@@ -22,12 +22,10 @@ export default class MainNavBar extends Component {
             <NavDropdown eventKey={3} title="Food" id="basic-nav-dropdown">
               <LinkContainer to="/recipes"><MenuItem eventKey={3.1}>Recipes</MenuItem></LinkContainer>
               <LinkContainer to="/meals"><MenuItem eventKey={3.2}>Meals</MenuItem></LinkContainer>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
               <MenuItem divider />
               <MenuItem eventKey={3.3}>Separated link</MenuItem>
             </NavDropdown>
-            <LinkContainer to="/recipes"><NavItem eventKey={2}>Recipes</NavItem></LinkContainer>
+            <LinkContainer to="/lights"><NavItem eventKey={2123}>Lights</NavItem></LinkContainer>
           </Nav>
           <Nav pullRight>
             {
