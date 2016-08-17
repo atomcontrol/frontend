@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import MealContainer from '../containers/MealContainer.js';
+import IngredientsContainer from '../containers/IngredientsContainer.js';
 import HeaderContainer from '../containers/HeaderContainer';
-class MealPage extends Component {
+class IngredientsPage extends Component {
   render() {
     let {slug, mode} = this.props.params;
     return (
       <div>
         <HeaderContainer/>
-          <MealContainer slug={slug} mode={mode} />
+        <IngredientsContainer slug={slug} mode={mode} />
       </div>
     );
   }
 }
-export default MealPage;
+export default IngredientsPage;
