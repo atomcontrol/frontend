@@ -4,12 +4,6 @@ import { Grid, Row, Col, Panel} from 'react-bootstrap';
 export default class RecipeDetail extends Component {
 
   render() {
-    // return (
-    //   <div>
-    //     detail
-    //     {this.props.recipe.name}
-    //   </div>
-    // );
     let r = this.props.recipe;
     if (r) {
 
@@ -37,8 +31,10 @@ export default class RecipeDetail extends Component {
             let ingredient = q[key].ingredients[ingr];
             ingList.push(
               <div key={ingredient.id}>
-                {ingredient.quantity} {(ingredient.quantity_endrange && ingredient.quantity_endrange!="0.00") ? "- "+ingredient.quantity_endrange : ''} {ingredient.quantity_unit} {ingredient.ingredient.name}
-              ({ingredient.grams} grams)
+                {ingredient.quantity}
+                {(ingredient.quantity_endrange && ingredient.quantity_endrange!="0.00") ? "- "+ingredient.quantity_endrange : ' '}
+                {ingredient.quantity_unit} {ingredient.ingredient.name}
+                {(ingredient.grams) ? '('+ingredient.grams+' grams)' : ''}
               <div>
                 {ingredient.substitute ? <li>substitute: {ingredient.substitute.name}</li> : ''}
                 {ingredient.extras ? <li>extras: {ingredient.extras}</li> : '' }
@@ -81,6 +77,8 @@ export default class RecipeDetail extends Component {
                   <li>makes: {r.makes_quantity} {r.makes_noun}</li>
                   <li>serves: {r.serves }</li>
                   <li>time: {r.time_details} ({r.time_total})</li>
+                  <li>cost: ${r.cost.total.toFixed(2)}</li>
+                  <li>cost per serving: ${(r.cost.total/r.serves).toFixed(2)}</li>
                 </ul>
 
                 <div className="recipe-detail_panel-header">tools</div>

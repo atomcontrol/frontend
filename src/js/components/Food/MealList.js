@@ -10,7 +10,7 @@ export default class MealList extends Component {
     var listItems = this.props.list.map(function(item) {
 
       var test = item.meal_recipe.map(function(eachMR) {
-        return <li><Link to={"recipes/"+eachMR.recipe.slug}>{eachMR.recipe.name}</Link>, serves {eachMR.recipe.serves}, portion {eachMR.portion}</li>
+        return <li><Link to={"recipes/"+eachMR.recipe.slug}>{eachMR.recipe.name}</Link>, serves {eachMR.recipe.serves}, portion {eachMR.portion}, ${eachMR.cost.total.toFixed(2)}</li>
       }) ;
 
       return (
