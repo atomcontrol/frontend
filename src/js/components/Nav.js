@@ -22,6 +22,7 @@ export default class MainNavBar extends Component {
             <NavDropdown eventKey={3} title="Food" id="basic-nav-dropdown">
               <LinkContainer to="/recipes"><MenuItem eventKey={3.1}>Recipes</MenuItem></LinkContainer>
               <LinkContainer to="/meals"><MenuItem eventKey={3.2}>Meals</MenuItem></LinkContainer>
+              <LinkContainer to="/ingredients"><MenuItem eventKey={3.3}>Ingredients</MenuItem></LinkContainer>
               <MenuItem divider />
               <MenuItem eventKey={3.3}>Separated link</MenuItem>
             </NavDropdown>

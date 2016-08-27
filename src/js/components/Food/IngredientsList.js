@@ -9,14 +9,15 @@ export default class MealList extends Component {
     if(this.props.list != undefined)
       var listItems = this.props.list.map(function(item) {
 
-        var test = item.usage.map(function(eachUsage) {
+        var usage = item.usage.map(function(eachUsage) {
           return <li key={eachUsage.id}>{eachUsage.parent_section.recipe.name}</li>
         }) ;
 
         return (
-          <tr>
+          <tr key={item.id}>
             <td>{item.name} ({item.id})</td>
-            <td>{test}</td>
+            <td>{usage}</td>
+            <td>${item.price} per {item.price_unit}</td>
           </tr>
         );
       });
@@ -28,6 +29,7 @@ export default class MealList extends Component {
           <tr>
             <th>ingredient</th>
             <th>used by</th>
+            <th>price</th>
           </tr>
           </thead>
           <tbody>
