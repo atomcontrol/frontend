@@ -1,19 +1,19 @@
 import { renderComponent, expect } from '../testHelper';
-import FriendListApp from '../../../src/js/containers/FriendListApp/FriendListApp';
-
-describe('FriendListApp', () => {
+import App from '../../../src/js/containers/App';
+import React from 'react';
+describe('App', () => {
 
   let component;
 
   beforeEach(() => {
-    component = renderComponent(FriendListApp);
+    component = renderComponent(App, {children: <div className="testdiv">testa</div>});
   });
 
-  it('shows an input to add a new friend', () => {
-    expect(component.find('.addFriendInput')).to.exist;
+  it('shows a div for App', () => {
+    expect(component.find('.testdiv')).to.exist;
   });
 
-  it('shows a friend list', () => {
-    expect(component.find('.friendList')).to.exist;
-  });
+  // it('shows a friend list', () => {
+  //   expect(component.find('.friendList')).to.exist;
+  // });
 });
