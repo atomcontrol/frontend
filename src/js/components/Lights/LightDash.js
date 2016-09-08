@@ -7,8 +7,10 @@ export default class LightDash extends Component {
 
 
     let lightTableItems;
-    if(this.props.list)
-    lightTableItems= this.props.list.map(function(light){
+    var llist = this.props.list;
+    if(llist)
+    lightTableItems= Object.keys(llist).map(function(val, index){
+      let light = llist[val];
       return (<tr key={light.id}><td>{light.id}</td><td>{light.name}</td></tr>);
     });
 
@@ -40,4 +42,4 @@ export default class LightDash extends Component {
     );
   }
 }
-LightDash.defaultProps  = {test: 2}
+LightDash.defaultProps  = {};
