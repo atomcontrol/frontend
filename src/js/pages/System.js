@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router';
+import SystemContainer from '../containers/SystemContainer.js';
 import HeaderContainer from '../containers/HeaderContainer';
-class Index extends Component {
+class SystemPage extends Component {
   render() {
     return (
       <div>
         <HeaderContainer/>
-        <div className="homepage">
-          <h1 style={{fontSize: '80px'}}>hello.</h1>
-          </div>
+        <SystemContainer />
       </div>
     );
   }
 }
 
 
-export default Index;
+export default SystemPage;
