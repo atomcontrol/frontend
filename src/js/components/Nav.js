@@ -26,7 +26,8 @@ export default class MainNavBar extends Component {
               <MenuItem divider />
               <MenuItem eventKey={3.3}>Separated link</MenuItem>
             </NavDropdown>
-            <LinkContainer to="/lights"><NavItem eventKey={2123}>Lights</NavItem></LinkContainer>
+            <LinkContainer to="/lights"><NavItem eventKey={4}>Lights</NavItem></LinkContainer>
+            <LinkContainer to="/system"><NavItem eventKey={5}>System</NavItem></LinkContainer>
           </Nav>
           <Nav pullRight>
             {
